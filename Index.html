@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APPFLIX</title>
+<link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' referrerpolicy='no-referrer' rel='stylesheet'/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+<style>@import url(https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap);*{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}*{list-style:none;margin:0;padding:0;box-sizing:border-box;color:#fff;font-family:"Source Sans Pro",sans-serif;text-decoration:none}:root{--main:#e21221}body{background:#181a20;font-family:"Source Sans Pro",sans-serif}.app-header{height:33vh;position:relative;display:flex;justify-content:center;align-items:flex-end;padding:15px}.app-header__bg{position:absolute;top:0;left:0;display:block;width:100%;height:100%;background:#000;z-index:-1;opacity:.9}.app-info{padding:20px}.app-info__mini-data{margin:10px 0}.btn-info i{color:var(--main);margin-right:7px}.btn-info{color:var(--main);display:inline-block;padding:5px 10px;margin-right:10px;font-weight:600;border:2px solid var(--main);border-radius:8px}.genres{margin:20px 0}.cast{margin:20px 0}.cast-min__container{aspect-ratio:1 / 1;background:#111215;border-radius:100%;overflow:hidden}.cast__min{width:100%;aspect-ratio:1 / 1;object-fit:cover}.swiper-slide{display:grid;grid-gap:15px;grid-template-columns:40% 60%;align-items:flex-start}.lista-episodios{padding:20px}.select-season{display:flex;align-items:center;margin-bottom:30px;position:relative;justify-content:space-between}.select-season select{background:rgb(48,48,48);outline:none;border:none;padding:10px 20px;font-size:20px;font-weight:600;border-radius:5px;border-right:20px solid transparent}.caps-grid{opacity:0;transition:opacity .4s ease;overflow:hidden}.caps-grid.animation{opacity:1;animation:fade 1s ease}@keyframes fade{0%{opacity:0}100%{opacity:1}}.hide{display:none}#temps{position:relative}.episode{display:grid;grid-gap:20px;grid-template-columns:.4fr .6fr}.episode__img{aspect-ratio:3 / 2;background:#111215;border-radius:4px;overflow:hidden}.episode__img img{width:100%;aspect-ratio:3 / 2;object-fit:cover}.episode__info__title{font-size:20px;margin-bottom:3px}.episode__info__duration{opacity:.7;font-weight:600}.caps-grid li{margin-bottom:20px}@media screen and (min-width:768px){.caps-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:20px}.episode{display:flex;flex-direction:column;text-align:center}.hide{display:none}}
+.iframe-box{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;z-index:9999;background:rgb(0,0,0,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;display:none}#cerrar{cursor:pointer}.fa-xmark{font-size:50px}#lightbox{aspect-ratio:16 / 9;width:100%;display:flex;flex-direction:column;align-items:flex-end}#lightbox-content{position:relative;overflow:hidden;width:100%;padding-top:36.25%;aspect-ratio:16 / 9}.responsive-iframe{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;aspect-ratio:16 / 9;z-index:9999}@media screen and (min-width:1000px){#lightbox{width:80%}}*{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}</style>
+</head>
+<body>
+
+<div class="app-header">
+<div class="app-header__bg" style="background: url('https://image.tmdb.org/t/p/w500//x5BwPpYXAEYDgh4RHFnaVSz2Ogi.jpg') no-repeat center center / cover;"></div>
+</div>
+
+<div class="app-info"><h1 class="app__info__title">Kawaii Dake Ja Nai Shikimori-san</h1><ul class="app-info__mini-data"><li class="rate btn-info"><i class="fa-solid fa-star"></i>8.2</li><li class="year btn-info">2022</li><li class="btn-info">1 Temporada</li></ul><p class="genres">Género: Animación, Comedia</p><p class="sinopsis">Shikimori parece la novia perfecta: linda, divertida, dulce cuando quiere... pero tiene un lado oscuro y genial que sale a la luz en las circunstancias adecuadas. Y a su novio Izumi le encanta estar cerca cuando eso ocurre.</p><div class="cast"><div class="swiper mySwiper"><ul class="swiper-wrapper app-info__cast"><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//cziKB19QMFJ6DQDtxTn07uRY2hq.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//x5BwPpYXAEYDgh4RHFnaVSz2Ogi.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Saori Onishi</h5><h6>Shikimori-san (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//94djpRr5s5N3l9SyEyg0zA8zcRo.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//x5BwPpYXAEYDgh4RHFnaVSz2Ogi.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Shuichiro Umeda</h5><h6>Izumi-kun (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//zSB8zgGwFGFq2EL3cWobQifsIXt.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//x5BwPpYXAEYDgh4RHFnaVSz2Ogi.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Misato Matsuoka</h5><h6>Kyo Nekozaki (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//7JupZGvqcq4dRxiTKpPxzg8NUS4.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//x5BwPpYXAEYDgh4RHFnaVSz2Ogi.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Rina Hidaka</h5><h6>Yui Hachimitsu (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//qyZpSYva9O9JQIZ0nVmXTf90FlL.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//x5BwPpYXAEYDgh4RHFnaVSz2Ogi.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Nobuhiko Okamoto</h5><h6>Shu Inuzuka (voice)</h6></div></li><li class="swiper-slide"><div class="cast-min__container"><img src="https://image.tmdb.org/t/p/w500//9o9NY3rTZdU3Tthyyez9hBL0LBF.jpg" onerror="this.src='https://image.tmdb.org/t/p/w500//x5BwPpYXAEYDgh4RHFnaVSz2Ogi.jpg';" alt="cast" class="cast__min"></div><div class="cast__info"><h5 class="cast__name">Ayaka Fukuhara</h5><h6>Kamiya-san (voice)</h6></div></li></ul></div></div></div>
+
+<div class="lista-episodios">
+<div class="select-season">
+<h2>Episodios</h2>
+<select name="" id="select-season">
+<option value="1">Temporada 1</option>
+
+</select>
+</div>
+
+<!--================================== SEASONS SECTION ==================================-->
+
+<div id="temps">
+
+<ul class="caps-grid animation" id="season-1">
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//4R20QmiM5rCNzMWukxWKorOWY7o.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">1. Episodio 1</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//7r758NUkOyKd48OjZ04NPOWmpuE.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">2. Episodio 2</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//svMDUEMMGdKEIhZt8lyGFldMdzN.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">3. Episodio 3</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//cBrV2Zwu0DiOrAH5uXRH65PeGQt.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">4. Episodio 4</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//8sOhru1AWRZNGJDpRYpxKMdCGQs.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">5. Episodio 5</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//32NigrQBcwLN513h8Md7AnrBZQh.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">6. Episodio 6</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//xRb2EvGlgp6YH0OYyFzlB7XKFSV.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">7. Episodio 7</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//ws3hQFInU3jGaYx9rdh5ZHxmRJd.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">8. Episodio 8</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//47ZQpuCaEPuNpgz0MgffMBT88cd.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">9. Episodio 9</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//cO2hSRPGLrg9x9WGIMOo1N5Gfe4.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">10. Episodio 10</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//ar5i95cZXtG49CUAl1tR5MqLMx8.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">11. Episodio 11</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+<li>
+<a href="#!" class="episode" data-url="https://www.youtube.com/embed/yBm4K00SMEk">
+<div class="episode__img">
+<img src="https://image.tmdb.org/t/p/w500//e805vu4QpSREBkFP2XfteKplJIY.jpg" onerror="this.src='https://i.ibb.co/kxfbQ6p/default.jpg';">
+</div>
+<div class="epsiode__info">
+<h4 class="episode__info__title">12. Episodio 12</h4>
+<div class="episode__info__duration">23m</div>
+</div>
+</a>
+</li>
+
+</ul>
+
+
+
+</div>
+
+</div>
+
+<!-- REPRODUCTOR -->
+<div class="iframe-box" id="iframe-box">
+<div id="lightbox">
+<div id="cerrar"><i class="fa-solid fa-xmark"></i></div>
+<div id="lightbox-content">
+<iframe class="responsive-iframe" id="video" src="" sandbox="allow-same-origin allow-scripts" scrolling="no" style=" border-radius:5px;" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+<!-- SLIDERS CONFIG-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+var swiper=new Swiper(".mySwiper",{slidesPerView:2,spaceBetween:40,freeMode:!0,breakpoints:{640:{slidesPerView:3},768:{slidesPerView:4,spaceBetween:15},1024:{slidesPerView:5}}})
+
+</script>
+
+<!-- TEMPORADAS -->
+<script>
+const selectorTempos=document.getElementById("select-season"),temps=document.getElementById("temps");selectorTempos.addEventListener("change",()=>{let b=`season-${selectorTempos.value}`,a=document.getElementById(`${b}`);temps.querySelectorAll("ul").forEach(a=>{a.classList.add("hide"),a.classList.remove("animation")}),a.classList.remove("hide"),a.classList.add("animation")})
+let cerrar=document.getElementById("cerrar"),iframeBox=document.getElementById("iframe-box"),temporadas=document.getElementById("temps"),iframe=document.getElementById("video");cerrar.addEventListener("click",()=>{iframe.removeAttribute("src"),iframeBox.style.display="none"});let eachEpisode=temporadas.querySelectorAll("li");eachEpisode.forEach(a=>{a.addEventListener("click",b=>{b.preventDefault(),iframeBox.style.display="flex";let c=a.querySelector("a").getAttribute("data-url");iframe.setAttribute("src",c)})})
+
+</script>
+</body>
+</html>
